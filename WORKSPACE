@@ -27,7 +27,6 @@ http_archive(
     ],
 )
 
-
 load("@googleapis//:repository_rules.bzl", "switched_rules_by_language")
 
 switched_rules_by_language(
