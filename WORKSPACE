@@ -19,13 +19,19 @@ http_archive(
 )
 
 http_archive(
-    name = "googleapis",
+    name = "com_googleapis",
     sha256 = "e9f34c67cf4f7fba744f30139951954f2557c366f9778cf51bc382556e8c9e4a",
     strip_prefix = "googleapis-8e8a37da239bf53604509bf8153b792adad7eca3",
     urls = [
         "https://github.com/googleapis/googleapis/archive/8e8a37da239bf53604509bf8153b792adad7eca3.zip",
     ],
 )
+
+alias(
+  name = "googleapis",
+  actual = "@com_googleapis",
+)
+
 
 load("@googleapis//:repository_rules.bzl", "switched_rules_by_language")
 
