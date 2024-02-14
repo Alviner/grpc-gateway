@@ -112,3 +112,8 @@ http_archive(
 load("@com_github_bazelbuild_buildtools//buildifier:deps.bzl", "buildifier_dependencies")
 
 buildifier_dependencies()
+
+alias(
+  name = "com_googleapis",
+  actual = "@googleapis",
+)
