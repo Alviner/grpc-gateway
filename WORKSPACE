@@ -19,17 +19,12 @@ http_archive(
 )
 
 http_archive(
-    name = "com_googleapis",
+    name = "googleapis",
     sha256 = "e9f34c67cf4f7fba744f30139951954f2557c366f9778cf51bc382556e8c9e4a",
     strip_prefix = "googleapis-8e8a37da239bf53604509bf8153b792adad7eca3",
     urls = [
         "https://github.com/googleapis/googleapis/archive/8e8a37da239bf53604509bf8153b792adad7eca3.zip",
     ],
-)
-
-alias(
-  name = "googleapis",
-  actual = "@com_googleapis",
 )
 
 
@@ -118,3 +113,8 @@ http_archive(
 load("@com_github_bazelbuild_buildtools//buildifier:deps.bzl", "buildifier_dependencies")
 
 buildifier_dependencies()
+
+alias(
+  name = "com_googleapis",
+  actual = "@googleapis",
+)
